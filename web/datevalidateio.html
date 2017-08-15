@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+<head>
+<title>Date before current date</title>
+<script>
+ 
+function dateCheck() {
+
+    var fDate,lDate,cDate;
+    fDate = Date.parse(document.getElementById("fDate").value);
+    lDate = Date.parse(document.getElementById("lDate").value);
+    cDate = Date.parse(document.getElementById("cDate").value);
+
+    if((cDate <= lDate && cDate >= fDate)) {
+        alert("true");
+        return true;
+    }
+    alert("false");
+    return false;
+}
+
+ </script>
+</head>
+<body>
+<h2>Check if date is between two dates</h2>
+Enter  first Date(dd/mm/yyyy):
+<input type="text" name="fDate" id="fDate" /><br/>
+Enter  second Date(dd/mm/yyyy):
+<input type="text" name="lDate" id="lDate" /><br/>
+Enter  date you want to check(dd/mm/yyyy):
+<input type="text" name="cDate" id="cDate" onblur="dateCheck()" />
+
+</body>
+</html>
